@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Stories Frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Linting
+
+To lint, run `npm run lint` and view your errors.
+
+To have the linter fix some of the issues run `npm run lint:fix`
 
 ## Available Scripts
 
