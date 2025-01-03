@@ -1,13 +1,18 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
 
+require 'rails/all'
+
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Backend
-  class Application < Rails::Application
-    config.load_defaults 8.0
-    config.api_only = true
-    config.autoload_lib(ignore: %w[assets tasks])
-  end
+#
+# Application - Stories
+#
+class Application < Rails::Application
+  config.load_defaults 8.0
+  config.api_only = true
+  config.autoload_lib(ignore: %w[assets tasks])
 end
