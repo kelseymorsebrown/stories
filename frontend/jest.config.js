@@ -1,16 +1,14 @@
+/** @type {import('jest').Config} */
 module.exports = {
-  collectCoverageFrom: ["src/**/*.ts", "src/**/*.tsx"],
-  coverageReporters: ["text", "html", "cobertura"],
-  globals: {
-    "ts-jest": {
-      tsConfig: "tsconfig.test.json"
-    }
-  },
-  moduleDirectories: ["node_modules", "src"],
+  roots: ['<rootDir>/tests', '<rootDir>/src'],
+  testEnvironment: 'jsdom', // Simulates a browser environment
+  collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
+  coverageReporters: ['text', 'html', 'cobertura'],
+  testMatch: ['<rootDir>/tests/**/*.{spec,test}.{js,jsx,ts,tsx}'],
   moduleNameMapper: {
-    "\\.svg": "<rootDir>/src/__mocks__/svgMock.ts",
-    "\\.jpg": "<rootDir>/src/__mocks__/jpgMock.ts"
+    '\\.svg': '<rootDir>/src/__mocks__/svgMock.ts',
+    '\\.jpg': '<rootDir>/src/__mocks__/jpgMock.ts',
+    '^@/(.*)$': '<rootDir>/src/$1', // Resolve paths like "@/components"
   },
-  preset: "ts-jest",
-  setupFilesAfterEnv: ["./tests/setup.ts"]
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 };
